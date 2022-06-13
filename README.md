@@ -1,20 +1,20 @@
 **Solution to Thoughtworks Infra-problem**
 
-This solution is designed to keep the current situtation and future in Mind. 
-Used AWS as that was a bit easy to test.
+1) This solution is designed to keep the current situtation and future in Mind. 
+2) Used AWS as that was a bit easy to test.
 
 **To Setup Infrastructure:**
-Run pre-deploy.sh to set the variables
-Run deploy.sh, this will setup an infra in AWS
+1) Run pre-deploy.sh to set the variables
+2) Run deploy.sh, this will setup an infra in AWS
 
 **To deploy application:**
-Run app-deploy.sh , which will build and deploy the application in EKS.
+  Run app-deploy.sh , which will build and deploy the application in EKS.
 **Note:** Creating docker image and storing it in ECR, using helm for the application deployment. This way in future if you need to deploy your application somewhere you can do it in fly as the appplication is now KNative.
 
 **Future Ready scenarios:**
 
-Infra and code together can be deployed using CICD pipeline. 
-Webhooks/actions can be configured to auto trigger the pipeline upon the successful merge of the latest changes.
+1) Infra and code together can be deployed using CICD pipeline. 
+2) Webhooks/actions can be configured to auto trigger the pipeline upon the successful merge of the latest changes.
 
 ----------------------------------------------------------------------------------------------------------------
 
