@@ -7,16 +7,15 @@
 1) AWS Account
 2) Create IAM user and download Access key and Secret key
 3) Following needs to be installed on the local system:
-  1) AWS CLI
-  2) Docker
-  3) Kubectl
-  4) Helm
-  5) Terraform
-  6) Terragrunt
-  7) Java
-  8) Clojure
-  9) Leiningen
-
+•	AWS CLI
+•	Docker
+•	Kubectl
+•	Helm
+•	Terraform
+•	Terragrunt
+•	Java
+•	Clojure
+•	Leiningen
 
 **To Setup Infrastructure:**
 1) Run pre-deploy.sh to set the variables
