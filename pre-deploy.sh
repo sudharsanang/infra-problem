@@ -1,31 +1,30 @@
 #!/bin/bash
 
-BUILD_SCRIPT_FILE_PATH="deploy-app.sh"
-TERRAGRUNT_FILE_PATH="infrastructure/terragrunt.hcl"
+BUILD_SCRIPT_FILEPATH="app-deploy.sh"
+TERRAGRUNT_FILEPATH="infras/terragrunt.hcl"
 
-help_function()
+help()
 {
    echo ""
    echo "Usage: $0 -r AWS_REGION -p AWS_PROFILE"
    echo -e "\t- <AWS_REGION>"
    echo -e "\t-p <AWS_PROFILE>"
-   exit 1 # Exit script after printing help
+   exit 1
 }
 
-while getopts "r:p:" opt
+while getopts "x:z:" opt
 do
    case "$opt" in
-      r ) AWS_REGION="$OPTARG" ;;
-      p ) AWS_PROFILE="$OPTARG" ;;
-      ? ) help_function ;; # Print help_function in case parameter is non-existent
+      x ) AWS_REGION="$OPTARG" ;;
+      z ) AWS_PROFILE="$OPTARG" ;;
+      ? ) help ;; 
    esac
 done
 
-# Print help_function in case parameters are empty
 if [ -z "$AWS_REGION" ] || [ -z "$AWS_PROFILE" ]
 then
    echo "Some or all of the parameters are empty";
-   help_function
+   help
 fi
 
 # Validate input
@@ -41,7 +40,7 @@ set_variables()
    export AWS_PROFILE=${AWS_PROFILE}
    export AWS_REGION=${AWS_REGION}
    if [ -f ${BUILD_SCRIPT_FILE_PATH} ] && [ -f ${TERRAGRUNT_FILE_PATH} ]; then
-      # replace vars
+  
       echo "Adding vars to ${BUILD_SCRIPT_FILE_PATH}"
       sed -i -e 's/aws_region/'${AWS_REGION}'/g' ${BUILD_SCRIPT_FILE_PATH}
       sed -i -e 's/aws_profile/'${AWS_PROFILE}'/g' ${BUILD_SCRIPT_FILE_PATH}
