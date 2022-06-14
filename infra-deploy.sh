@@ -1,6 +1,6 @@
 #!/bin/bash
 
-INFRA_DIR_NAME="testinfra"
+INFRA_DIR_NAME="infra"
 
 plan_infra() {
     echo "Checking if all files & directory exists"
