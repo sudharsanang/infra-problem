@@ -37,6 +37,7 @@
 
 Detailed documentation is available in https://cloud.google.com/java/getting-started/jib
 
+
 :plugins 
 :jib-build/build-config {:base-image {:type :registry
                                         :image-name "ecr.io/distroless/java"}
@@ -54,7 +55,10 @@ Detailed documentation is available in https://cloud.google.com/java/getting-sta
 **References:**
 
 https://docs.aws.amazon.com/eks/latest/userguide/creating-a-vpc.html - for the cloud formation template 
+
+
 https://registry.terraform.io/ - for terraform modules
+
 https://www.techtarget.com/searchcloudcomputing/tutorial/How-to-deploy-an-EKS-cluster-using-Terraform
 
 ----------------------------------------------------------------------------------------------------------------
