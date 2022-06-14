@@ -1,7 +1,7 @@
 #!/bin/bash
 
 BUILD_SCRIPT_FILEPATH="app-deploy.sh"
-TERRAGRUNT_FILEPATH="infras/terragrunt.hcl"
+TERRAGRUNT_FILEPATH="infra/terragrunt.hcl"
 
 help()
 {
