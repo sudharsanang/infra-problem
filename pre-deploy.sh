@@ -39,15 +39,15 @@ set_variables()
 
    export AWS_PROFILE=${AWS_PROFILE}
    export AWS_REGION=${AWS_REGION}
-   if [ -f ${BUILD_SCRIPT_FILE_PATH} ] && [ -f ${TERRAGRUNT_FILE_PATH} ]; then
+   if [ -f ${BUILD_SCRIPT_FILEPATH} ] && [ -f ${TERRAGRUNT_FILEPATH} ]; then
   
-      echo "Adding vars to ${BUILD_SCRIPT_FILE_PATH}"
-      sed -i -e 's/aws_region/'${AWS_REGION}'/g' ${BUILD_SCRIPT_FILE_PATH}
-      sed -i -e 's/aws_profile/'${AWS_PROFILE}'/g' ${BUILD_SCRIPT_FILE_PATH}
+      echo "Adding vars to ${BUILD_SCRIPT_FILEPATH}"
+      sed -i -e 's/aws_region/'${AWS_REGION}'/g' ${BUILD_SCRIPT_FILEPATH}
+      sed -i -e 's/aws_profile/'${AWS_PROFILE}'/g' ${BUILD_SCRIPT_FILEPATH}
 
-      echo "Adding vars to ${TERRAGRUNT_FILE_PATH}"
-      sed -i -e 's/aws_region/'${AWS_REGION}'/g' ${TERRAGRUNT_FILE_PATH}
-      sed -i -e 's/aws_profile/'${AWS_PROFILE}'/g' ${TERRAGRUNT_FILE_PATH}
+      echo "Adding vars to ${TERRAGRUNT_FILEPATH}"
+      sed -i -e 's/aws_region/'${AWS_REGION}'/g' ${TERRAGRUNT_FILEPATH}
+      sed -i -e 's/aws_profile/'${AWS_PROFILE}'/g' ${TERRAGRUNT_FILEPATH}
     fi
 }
 
