@@ -29,8 +29,10 @@
 **Future Ready scenarios:**
 
 1) Infra and code together can be deployed using CICD pipeline. 
-2) Webhooks/actions can be configured to auto trigger the pipeline upon the successful merge of the latest changes.
-3) Google's JIB can be a good candidate for the future, using which we can replace dockerfiles and docker compose files. All we need to do is to configure project.clj with below. This will help us avoid extra code as JIB takes care of converting the artifacts into docker images along with configuring the entrypoint in order for the artifacts to be choosen.
+2) Intergrate Kubernetes with the runner (if Jenkins --> we can configure clouds under manage Jenkins) with which we can let the runner assign a dynamic pod for building, testing the application, let JIB convert the code and push the docker images to registry and helm will create charts using the helm templates which inturn can be deployed to various environemnts.
+
+4) Webhooks/actions can be configured to auto trigger the pipeline upon the successful merge of the latest changes.
+5) Google's JIB can be a good candidate for the future, using which we can replace dockerfiles and docker compose files. All we need to do is to configure project.clj with below. This will help us avoid extra code as JIB takes care of converting the artifacts into docker images along with configuring the entrypoint in order for the artifacts to be choosen.
 
 ![image](https://user-images.githubusercontent.com/33951509/173561030-cc05f8f0-7985-4ccd-9dd2-be9f993b3520.png)
 
