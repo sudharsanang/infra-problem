@@ -8,7 +8,7 @@ plan_infra() {
         echo "Deploying Infrastructure..."
         terragrunt run-all plan --terragrunt-include-dir "$INFRA_DIR_NAME/"
     fi
-    echo "Infrastructure deployed. Move on to build.sh & deploy.sh to build and deploy application"
+    echo "Infrastructure deployed."
 }
 
 deploy_infra() {
@@ -17,7 +17,7 @@ deploy_infra() {
         echo "Deploying Infrastructure..."
         terragrunt run-all apply --terragrunt-include-dir "$INFRA_DIR_NAME/"
         terragrunt output --terragrunt-config "$INFRA_DIR_NAME/terragrunt.hcl" > terragrunt_out.log
-        echo "Infrastructure deployed. Move on to app.sh script"
+        echo "Infrastructure deployed."
     fi
 }
 
