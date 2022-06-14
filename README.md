@@ -3,13 +3,28 @@
 1) This solution is designed to keep the current situtation and future in Mind. 
 2) Used AWS as that was a bit easy to test.
 
+**Pre-requisite:**
+1) AWS Account
+2) Create IAM user and download Access key and Secret key
+3) Following needs to be installed on the local system:
+  1) AWS CLI
+  2) Docker
+  3) Kubectl
+  4) Helm
+  5) Terraform
+  6) Terragrunt
+  7) Java
+  8) Clojure
+  9) Leiningen
+
+
 **To Setup Infrastructure:**
 1) Run pre-deploy.sh to set the variables
 2) Run deploy.sh, this will setup an infra in AWS
 
 **To deploy application:**
   Run app-deploy.sh , which will build and deploy the application in EKS.
-**Note:** Creating docker image and storing it in ECR, using helm for the application deployment. This way in future if you need to deploy your application somewhere you can do it in fly as the appplication is now KNative.
+**Note:** Creating docker image and storing it in ECR, using helm for the application deployment. This way in future if you need to migrate your application somewhere you can do it on the fly as the appplication is  KNative.
 
 **Future Ready scenarios:**
 
