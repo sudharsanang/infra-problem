@@ -21,12 +21,5 @@ deploy_infra() {
     fi
 }
 
-destroy_infra() {
-    if [[ -d "$INFRA_DIR_NAME" ]]; then
-        echo "Destroying Infrastructure..."
-        terragrunt run-all destroy --terragrunt-include-dir "$INFRA_DIR_NAME/"
-    fi
-}
-
 plan_infra
 deploy_infra
