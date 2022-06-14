@@ -4,22 +4,22 @@
 # Variables
 AWS_PROFILE="aws_profile"
 AWS_REGION="aws_region"
-PRE_REQ_FILES="Makefile Dockerfile"
-PRE_REQ_DIRS="front-end newsfeed quotes common-utils"
+REQ_FILES="Makefile Dockerfile"
+REQ_DIRS="front-end newsfeed quotes common-utils"
 TERRAGRUNT_OUT_FILE="terragrunt-out.log"
 HELM_PROJECT_DIR="helm-chart-clojure"
-HELM_CHART_NAME="clojure-app"
+HELM_CHART_NAME="helm-chart-clojure"
 
 check_dependencies() {
     echo "Checking if all files & directory exists."
     
-    for FILE in ${PRE_REQ_FILES}; do
+    for FILE in ${REQ_FILES}; do
         if ! [[ -f "${FILE}" ]]; then
 		echo "${FILE} Required file(s) not found."
         fi
     done
 
-    for DIR in ${PRE_REQ_DIRS}; do
+    for DIR in ${REQ_DIRS}; do
         if ! [[ -d "${DIR}" ]]; then
             echo "${DIR} Required directory not found."
         fi
@@ -47,7 +47,7 @@ run_tests() {
 
 build_app() {
     if [[ -f "Makefile" ]]; then
-        echo "Building & Testing Application"
+        echo "Building Application"
         make libs
         make clean all
         echo "Building complete. Artifacts ready to be deployed"
