@@ -16,6 +16,9 @@
 1) Infra and code together can be deployed using CICD pipeline. 
 2) Webhooks/actions can be configured to auto trigger the pipeline upon the successful merge of the latest changes.
 
+**References:**
+https://docs.aws.amazon.com/eks/latest/userguide/creating-a-vpc.html - for the cloud formation template 
+https://registry.terraform.io/ - for terraform modules
 ----------------------------------------------------------------------------------------------------------------
 
 # DevOps Assessment
